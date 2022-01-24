@@ -3,8 +3,13 @@
 #
 
 CFLAGS += -Wall -pedantic -std=gnu99
-#CFLAGS += -g
+ifeq ($(DEBUG),y)
+CFLAGS += -g -DDEBUG
+else
 CFLAGS += -O2 -DNDEBUG
+endif
+CFLAGS += $(EXTRA_CFLAGS)
+
 LDLIBS = -lpthread
 
 ifneq ($(CROSS_COMPILE),)

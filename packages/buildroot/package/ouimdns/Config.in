@@ -1,0 +1,5 @@
+config BR2_PACKAGE_OUISTITI_MDNS
+	bool "Ouistiti: mDNS module"
+	depends on BR2_PACKAGE_OUISTITI
+	help
+	  Library module for ouistiti to publish the server configuration on mDNS
